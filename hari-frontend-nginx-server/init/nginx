@@ -1,0 +1,7 @@
+#!/sbin/openrc-run
+command=/usr/sbin/nginx
+command_args="-g 'daemon off;'"
+command_user=root
+command_background=yes
+pidfile=/run/${RC_SVCNAME}.pid
+

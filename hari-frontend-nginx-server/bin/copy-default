@@ -1,0 +1,7 @@
+#!/bin/sh
+mkdir -p /repo/config;
+mkdir -p /repo/code;
+if [ ! -f "/repo/config/nginx.server.conf" ]
+then
+   cp /default/nginx.server.conf /repo/config;
+fi

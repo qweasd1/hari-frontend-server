@@ -1,0 +1,10 @@
+{
+  "name": "hari-frontend-server",
+  "version": "0.0.1",
+  "dependencies": {
+    
+  },
+  "scripts": {
+    "deploy-nginx":"cd hari-frontend-nginx-server && docker build . -t qweasd1z1z/hari-frontend-nginx-server && docker push qweasd1z1z/hari-frontend-nginx-server"
+  }
+}
