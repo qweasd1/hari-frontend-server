@@ -3,5 +3,6 @@ mkdir -p /repo/config;
 mkdir -p /repo/code;
 if [ ! -f "/repo/config/nginx.server.conf" ]
 then
-   cp /default/nginx.server.conf /repo/config;
+   envsubst < /default/nginx.server.conf > /repo/config/nginx.server.conf;
 fi
+

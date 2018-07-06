@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+command=/usr/sbin/crond
+command_args=""
+command_user=root
+command_background=yes
+pidfile=/run/${RC_SVCNAME}.pid

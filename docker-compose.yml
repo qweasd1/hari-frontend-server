@@ -15,5 +15,7 @@ services:
       - hari-frontend-volume:/repo
     ports:
       - 8087:80
+    environment:
+      - DOMAIN=haritonybear.tk
 volumes:
   hari-frontend-volume:

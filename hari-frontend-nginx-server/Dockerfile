@@ -152,19 +152,24 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 # install letsencript
-#RUN \
-#    apk add  --update --no-cache certbot tzdata openssl
+RUN \
+    apk add  --update --no-cache acme-client libressl && \
+    openssl dhparam -dsaparam -out /etc/nginx/dhparam.pem 4096
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY default default
 COPY init/* /etc/init.d/
 COPY bin/* /usr/local/bin/
+COPY etc/* /etc/
 
 RUN chmod +x /etc/init.d/* && \
     chmod +x /usr/local/bin/* && \
+    ln -s /usr/local/bin/update-certificate /etc/periodic/weekly/update-certificate && \
     rc-update add nginx default && \
     rc-update add inotifyd default && \
-    rc-update add copy-default default
+    rc-update add copy-default default && \
+    rc-update add update-certificate default && \
+    rc-update add cron default
 
 
 EXPOSE 80
