@@ -1,8 +1,8 @@
 #!/bin/sh
 mkdir -p /repo/config;
 mkdir -p /repo/code;
-if [ ! -f "/repo/config/nginx.server.conf" ]
+if [ ! -f "/repo/config/letsencript.server.conf" ]
 then
-   envsubst < /default/nginx.server.conf > /repo/config/nginx.server.conf;
+   envsubst '$DOMAIN' < /default/letsencript.server.conf > /repo/config/nginx.server.conf;
 fi
 

@@ -168,7 +168,7 @@ RUN chmod +x /etc/init.d/* && \
     rc-update add nginx default && \
     rc-update add inotifyd default && \
     rc-update add copy-default default && \
-    rc-update add update-certificate default && \
+    rc-update add init-certificate default && \
     rc-update add cron default
 
 

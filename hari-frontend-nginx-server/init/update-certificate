@@ -1,3 +1,0 @@
-#!/sbin/openrc-run
-command=/usr/local/bin/update-certificate
-command_user=root

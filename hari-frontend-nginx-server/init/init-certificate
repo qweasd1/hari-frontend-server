@@ -1,0 +1,7 @@
+#!/sbin/openrc-run
+command=/usr/local/bin/init-certificate
+command_user=root
+rc_need="nginx"
+pidfile=/run/${RC_SVCNAME}.pid
+command_background=yes
+start_stop_daemon_args="--stdout /var/log/${RC_SVCNAME}.log --stderr /var/log/${RC_SVCNAME}.log"

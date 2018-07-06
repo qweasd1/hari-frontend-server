@@ -4,4 +4,4 @@ command_args="-g 'daemon off;'"
 command_user=root
 command_background=yes
 pidfile=/run/${RC_SVCNAME}.pid
-
+rc_need="copy-default"
