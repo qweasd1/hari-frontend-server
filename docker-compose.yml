@@ -3,7 +3,7 @@ services:
   sftp:
     image: atmoz/sftp
     volumes:
-      - hari-frontend-volume:/home/admin
+      - hari-frontend-volume:/home/sftp
     ports:
       - "2222:22"
     depends_on:
