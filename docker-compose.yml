@@ -17,6 +17,6 @@ services:
       - 80:80
       - 443:443
     environment:
-      - DOMAIN=tonybear3.tk
+      - DOMAIN=tonybear4.tk
 volumes:
   hari-frontend-volume:
