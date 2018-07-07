@@ -1,14 +1,17 @@
 version: "3"
 services:
   sftp:
-    image: atmoz/sftp
+    image: qweasd1z1z/sftp
     volumes:
       - hari-frontend-volume:/home/sftp
     ports:
       - "2222:22"
     depends_on:
       - frontend
-    command: sftp:sftp:1001
+#    command: sftp:sftp:1001
+    environment:
+      - USER=sftp
+      - PASSWORD=sftp
   frontend:
     image: qweasd1z1z/hari-frontend-nginx-server
     volumes:
@@ -17,6 +20,6 @@ services:
       - 80:80
       - 443:443
     environment:
-      - DOMAIN=tonybear4.tk
+      - DOMAIN=tonybear5.tk
 volumes:
   hari-frontend-volume:
