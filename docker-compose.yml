@@ -1,16 +1,14 @@
 version: "3"
 services:
   sftp:
-    image: sjourdan/alpine-sshd
+    image: atmoz/sftp
     volumes:
       - hari-frontend-volume:/home/admin
     ports:
       - "2222:22"
-    environment:
-      - USER=admin
-      - PASSWORD=admin
     depends_on:
       - frontend
+    command: sftp:sftp:1001
   frontend:
     image: qweasd1z1z/hari-frontend-nginx-server
     volumes:

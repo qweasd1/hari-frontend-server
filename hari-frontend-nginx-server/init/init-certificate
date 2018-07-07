@@ -1,6 +1,6 @@
 #!/sbin/openrc-run
 command=/usr/local/bin/init-certificate
-command_user=root
+command_user=sftp
 rc_need="nginx"
 pidfile=/run/${RC_SVCNAME}.pid
 command_background=yes

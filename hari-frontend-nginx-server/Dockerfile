@@ -156,6 +156,9 @@ RUN \
     apk add  --update --no-cache acme-client libressl && \
     openssl dhparam -dsaparam -out /etc/nginx/dhparam.pem 4096
 
+# create user
+RUN adduser -u 1001 -HD sftp
+
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY default default
 COPY init/* /etc/init.d/
