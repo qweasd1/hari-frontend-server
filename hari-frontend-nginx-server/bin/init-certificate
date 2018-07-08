@@ -1,8 +1,8 @@
 #!/bin/sh
 acme-client -a https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf -Nnmv $DOMAIN && renew=1
-if [ ! -f /repo/init-certificate ]
+if [ ! -f /repo/phase/init-certificate ]
 then
     [ "$renew" = 1 ] && envsubst '$DOMAIN' < /default/nginx.server.conf > /repo/config/nginx.server.conf &&  /usr/local/bin/reload-nginx
-    touch /repo/init-certificate
+    touch /repo/phase/init-certificate
     chown -R 1001 /repo
 fi

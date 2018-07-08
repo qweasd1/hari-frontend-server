@@ -5,5 +5,5 @@ then
     mkdir -p /repo/code;
     mkdir -p /repo/phase;
     envsubst '$DOMAIN' < /default/letsencript.server.conf > /repo/config/nginx.server.conf;
-    touch /repo/copy-default
+    touch /repo/phase/copy-default
 fi
