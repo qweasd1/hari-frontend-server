@@ -7,12 +7,11 @@ services:
     ports:
       - "2222:22"
     depends_on:
-      - frontend
-#    command: sftp:sftp:1001
+      - nginx
     environment:
       - USER=sftp
       - PASSWORD=sftp
-  frontend:
+  nginx:
     image: qweasd1z1z/hari-frontend-nginx-server
     volumes:
       - hari-frontend-volume:/repo
@@ -21,7 +20,7 @@ services:
       - 80:80
       - 443:443
     environment:
-      - DOMAIN=tonybear6.tk
+      - DOMAIN=tonybear7.tk
 volumes:
   hari-frontend-volume:
   certificate-volume:

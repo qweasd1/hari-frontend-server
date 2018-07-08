@@ -167,12 +167,11 @@ COPY etc/* /etc/
 
 RUN chmod +x /etc/init.d/* && \
     chmod +x /usr/local/bin/* && \
-    ln -s /usr/local/bin/update-certificate /etc/periodic/weekly/update-certificate && \
     rc-update add nginx default && \
     rc-update add inotifyd default && \
     rc-update add copy-default default && \
     rc-update add init-certificate default && \
-    rc-update add cron default
+    rc-update add update-certificate default
 
 
 EXPOSE 80

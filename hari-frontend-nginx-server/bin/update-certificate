@@ -1,3 +1,6 @@
 #!/bin/sh
-acme-client -a https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf -Nnmv $DOMAIN && renew=1
-[ "$renew" = 1 ] &&  /usr/local/bin/reload-nginx
+while true; do
+    sleep 7d;
+    echo "update certificate at $(date)";
+    acme-client -a https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf -Nnmv $DOMAIN && /usr/local/bin/reload-nginx;
+done

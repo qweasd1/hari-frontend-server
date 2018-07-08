@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+command=/usr/local/bin/update-certificate
+command_args=""
+command_user=root
+command_background=yes
+rc_need="init-certificate"
+start_stop_daemon_args="--stdout /var/log/${RC_SVCNAME}.log --stderr /var/log/${RC_SVCNAME}.log"
+pidfile=/run/${RC_SVCNAME}.pid
