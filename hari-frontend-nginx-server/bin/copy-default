@@ -1,8 +1,9 @@
 #!/bin/sh
-mkdir -p /repo/config;
-mkdir -p /repo/code;
-if [ ! -f "/repo/config/letsencript.server.conf" ]
+if [ ! -d /repo/phase ]
 then
-   envsubst '$DOMAIN' < /default/letsencript.server.conf > /repo/config/nginx.server.conf;
+    mkdir -p /repo/config;
+    mkdir -p /repo/code;
+    mkdir -p /repo/phase;
+    envsubst '$DOMAIN' < /default/letsencript.server.conf > /repo/config/nginx.server.conf;
+    touch /repo/copy-default
 fi
-

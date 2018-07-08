@@ -16,6 +16,7 @@ services:
     image: qweasd1z1z/hari-frontend-nginx-server
     volumes:
       - hari-frontend-volume:/repo
+      - certificate-volume:/etc/ssl/acme
     ports:
       - 80:80
       - 443:443
@@ -23,3 +24,4 @@ services:
       - DOMAIN=tonybear5.tk
 volumes:
   hari-frontend-volume:
+  certificate-volume:
