@@ -21,7 +21,7 @@ services:
       - 80:80
       - 443:443
     environment:
-      - DOMAIN=tonybear5.tk
+      - DOMAIN=tonytest.tk
 volumes:
   hari-frontend-volume:
   certificate-volume:
